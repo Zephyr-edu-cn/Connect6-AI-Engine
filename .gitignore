@@ -12,3 +12,4 @@ target/
 
 # 其它
 project_summary.txt
+*.py
