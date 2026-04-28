@@ -1,0 +1,14 @@
+# IntelliJ IDEA 配置文件
+.idea/
+*.iml
+
+# 编译输出目录
+out/
+target/
+*.class
+
+# 日志文件
+*.log
+
+# 其它
+project_summary.txt
