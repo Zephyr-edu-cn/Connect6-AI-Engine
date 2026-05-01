@@ -162,7 +162,7 @@ public class RoadBoard {
         }
 
         // 系数：稍微侧重防守，避免被偷袭
-        return myScore - (int)(oppScore * 1.2);
+        return myScore - (int) (oppScore * 1.2);
     }
 
     // 快速检查是否有空位（为了防止搜索填满棋盘出错）
@@ -202,22 +202,22 @@ public class RoadBoard {
         int[] roads = POS_TO_ROADS[idx];
         int oppColor = (myColor == 1) ? 2 : 1;
 
-        for(int roadId : roads) {
+        for (int roadId : roads) {
             int b = roadState[roadId * 2];
             int w = roadState[roadId * 2 + 1];
 
             // 进攻价值：如果是我的有效路，且加一颗子能升级
             if (myColor == 1) { // 我是黑
-                if (w == 0) score += WEIGHTS[b+1];
+                if (w == 0) score += WEIGHTS[b + 1];
             } else { // 我是白
-                if (b == 0) score += WEIGHTS[w+1];
+                if (b == 0) score += WEIGHTS[w + 1];
             }
 
             // 防守价值：如果是对方的有效路，堵住它价值巨大
             if (oppColor == 1) { // 敌是黑
-                if (w == 0) score += WEIGHTS[b+1]; // 堵住它的延伸
+                if (w == 0) score += WEIGHTS[b + 1]; // 堵住它的延伸
             } else { // 敌是白
-                if (b == 0) score += WEIGHTS[w+1];
+                if (b == 0) score += WEIGHTS[w + 1];
             }
         }
         return score;

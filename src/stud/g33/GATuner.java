@@ -2,6 +2,7 @@ package stud.g33;
 
 import core.game.Game;
 import core.game.ui.Configuration;
+
 import java.util.*;
 
 /**
@@ -126,7 +127,8 @@ public class GATuner {
             Individual mother = parents.get(rand.nextInt(POPULATION_SIZE / 2));
 
             int[] childGene = new int[7];
-            childGene[0] = 0; childGene[6] = 10000000;
+            childGene[0] = 0;
+            childGene[6] = 10000000;
 
             // 均匀交叉
             for (int k = 1; k <= 5; k++) {

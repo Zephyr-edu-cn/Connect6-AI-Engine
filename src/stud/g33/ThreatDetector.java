@@ -1,6 +1,7 @@
 package stud.g33;
 
 import core.game.Move;
+
 import java.util.*;
 
 /**
@@ -11,7 +12,8 @@ public class ThreatDetector {
 
     /**
      * 在全局 924 条路中寻找能够直接成 6 的“必胜着”
-     * @param rb 盘面路表模型
+     *
+     * @param rb    盘面路表模型
      * @param color 待检查的棋手颜色
      * @return 必胜走法，若无则返回 null
      */

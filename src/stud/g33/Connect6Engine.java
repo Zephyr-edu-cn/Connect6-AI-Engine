@@ -4,6 +4,7 @@ import core.board.Board;
 import core.board.PieceColor;
 import core.game.Game;
 import core.game.Move;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -40,8 +41,9 @@ public class Connect6Engine extends core.player.AI {
 
     /**
      * GA 专用构造函数：允许遗传算法在训练时注入不同的“基因”（权重数组）
+     *
      * @param weights 评估函数分量权重
-     * @param name 个体唯一标识，用于裁判统计得分
+     * @param name    个体唯一标识，用于裁判统计得分
      */
     public Connect6Engine(int[] weights, String name) {
         this.customWeights = weights;
@@ -118,22 +120,28 @@ public class Connect6Engine extends core.player.AI {
         int topN = Math.min(candidates.size(), 20);
 
         // 己方斩杀检查
-        for(int i=0; i<topN; i++) {
-            for(int j=i+1; j<topN; j++) {
-                int p1 = candidates.get(i); int p2 = candidates.get(j);
-                roadBoard.addStone(p1, myColorInt); roadBoard.addStone(p2, myColorInt);
+        for (int i = 0; i < topN; i++) {
+            for (int j = i + 1; j < topN; j++) {
+                int p1 = candidates.get(i);
+                int p2 = candidates.get(j);
+                roadBoard.addStone(p1, myColorInt);
+                roadBoard.addStone(p2, myColorInt);
                 int score = roadBoard.evaluate(myColorInt);
-                roadBoard.removeStone(p2, myColorInt); roadBoard.removeStone(p1, myColorInt);
+                roadBoard.removeStone(p2, myColorInt);
+                roadBoard.removeStone(p1, myColorInt);
                 if (score > 9000000) return new Move(p1, p2);
             }
         }
         // 对方防堵检查
-        for(int i=0; i<topN; i++) {
-            for(int j=i+1; j<topN; j++) {
-                int p1 = candidates.get(i); int p2 = candidates.get(j);
-                roadBoard.addStone(p1, oppColorInt); roadBoard.addStone(p2, oppColorInt);
+        for (int i = 0; i < topN; i++) {
+            for (int j = i + 1; j < topN; j++) {
+                int p1 = candidates.get(i);
+                int p2 = candidates.get(j);
+                roadBoard.addStone(p1, oppColorInt);
+                roadBoard.addStone(p2, oppColorInt);
                 int score = roadBoard.evaluate(oppColorInt);
-                roadBoard.removeStone(p2, oppColorInt); roadBoard.removeStone(p1, oppColorInt);
+                roadBoard.removeStone(p2, oppColorInt);
+                roadBoard.removeStone(p1, oppColorInt);
                 if (score > 9000000) return new Move(p1, p2);
             }
         }
@@ -158,10 +166,13 @@ public class Connect6Engine extends core.player.AI {
         // 生成候选走法组合并递归搜索
         for (int i = 0; i < limit; i++) {
             for (int j = i + 1; j < limit; j++) {
-                int p1 = candidates.get(i); int p2 = candidates.get(j);
-                roadBoard.addStone(p1, myColorInt); roadBoard.addStone(p2, myColorInt);
+                int p1 = candidates.get(i);
+                int p2 = candidates.get(j);
+                roadBoard.addStone(p1, myColorInt);
+                roadBoard.addStone(p2, myColorInt);
                 int val = minLayer(MAX_DEPTH - 1, alpha, beta);
-                roadBoard.removeStone(p2, myColorInt); roadBoard.removeStone(p1, myColorInt);
+                roadBoard.removeStone(p2, myColorInt);
+                roadBoard.removeStone(p1, myColorInt);
 
                 if (val > alpha) {
                     alpha = val;
