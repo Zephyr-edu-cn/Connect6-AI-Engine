@@ -25,7 +25,8 @@ A Java-based Connect6 AI engine with road-based board evaluation, Alpha-Beta pru
 
 ## Key Idea
 
-Connect6 has a very large branching factor because each move places two stones.  
+Connect6 has a very large branching factor because each move places two stones.
+
 Instead of enumerating all empty pairs, this engine represents the board using precomputed six-cell roads and generates candidate moves from threat-related roads and local neighborhoods.
 
 The optimization strategy is:
@@ -36,3 +37,21 @@ Road-based board representation
     -> threat-space candidate generation
     -> Alpha-Beta pruning
     -> GA-tuned evaluation weights
+```
+
+## Experimental Results
+
+| Experiment | Games | Result | Purpose |
+|---|---:|---:|---|
+| V3 vs V2 | 100 | 80 wins / 20 losses | Validate threat-space search |
+| GA-G33 vs G22-V1 | 1000 | 694 wins / 306 losses | Validate GA-tuned weights |
+
+Detailed reports:
+
+- [Design Notes](docs/design.md)
+- [Benchmark Report](docs/benchmark.md)
+
+Raw logs:
+
+- [GA Tuning Log](results/ga_tuning_log.txt)
+- [G33 vs G22 1000-game Match Log](results/match_g33_vs_g22_1000.txt)
