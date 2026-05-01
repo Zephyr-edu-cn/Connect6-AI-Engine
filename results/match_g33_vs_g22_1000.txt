@@ -1,0 +1,29 @@
+C:\Users\DELL\.jdks\corretto-19.0.2\bin\java.exe -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 "-javaagent:D:\IntelliJ IDEA 2024.1.4\lib\idea_rt.jar=63180:D:\IntelliJ IDEA 2024.1.4\bin" -classpath C:\Users\DELL\Desktop\finl\connect6-ai-engine\out\production\connect6-ai-engine;C:\Users\DELL\Desktop\finl\connect6-ai-engine\lib\jagoclient.jar stud.AITester
+=========================================================================
+	Game Statistics (G33-AlphaBot vs G22-V1):  1388
+		先手：	win:   194, lose:   306, draw:     0, 得分:   388
+		后手：	win:   500, lose:     0, draw:     0, 得分:  1000
+		合计：	win:   694, lose:   306, draw:     0, 得分:  1388
+----------------------------------------------------------------------
+	 G33-AlphaBot总计：	win:   694, lose:   306, draw:     0, 得分:  1388
+
+=========================================================================
+	Game Statistics (G22-V1 vs G33-AlphaBot):   612
+		先手：	win:     0, lose:   500, draw:     0, 得分:     0
+		后手：	win:   306, lose:   194, draw:     0, 得分:   612
+		合计：	win:   306, lose:   694, draw:     0, 得分:   612
+----------------------------------------------------------------------
+	 G22-V1总计：	win:   306, lose:   694, draw:     0, 得分:   612
+
+================================棋手总战绩================================
+	 G33-AlphaBot总计：	win:   694, lose:   306, draw:     0, 得分:  1388
+	 G22-V1总计：	win:   306, lose:   694, draw:     0, 得分:   612
+
+===========棋手得分明细 (WSUM: 先手得分，BSUM：后手得分，TSUM：棋手的总得分)===========
+         G33-AlphaBot, G22-V1, |WSUM
+	--------------------------
+	G33-AlphaBot|     ,   388, |  388
+	G22-V1|    0,      , |    0
+	BSUM| 1000,   612, |   -
+	TSUM| 1388,   612, |   -
+4586.2656
