@@ -44,7 +44,8 @@ Road-based board representation
 | Experiment | Games | Result | Purpose |
 |---|---:|---:|---|
 | V3 vs V2 | 100 | 80 wins / 20 losses | Validate threat-space search |
-| GA-G33 vs G22-V1 | 1000 | 694 wins / 306 losses | Validate GA-tuned weights |
+| GA-G33 vs G22-V1 | 1000 | 694 wins / 306 losses | Validate GA-tuned weights against baseline |
+| GA-G33 vs Manual-G33 | 1000 | 547 wins / 453 losses | Compare GA-tuned weights with hand-tuned weights |
 
 Detailed reports:
 

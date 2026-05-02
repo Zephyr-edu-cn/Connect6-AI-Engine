@@ -55,7 +55,30 @@ For G33-AlphaBot:
 
 This result suggests that the tuned weights produced a particularly stable response strategy when playing second.
 
-## 4. GA Tuning Log
+## 4. Manual-G33 vs GA-G33
+
+This experiment directly compares the hand-tuned V3 weights with the GA-tuned weights under the same G33 engine architecture.
+
+| Player | Wins | Losses | Draws | Win Rate |
+|---|---:|---:|---:|---:|
+| GA-G33 | 547 | 453 | 0 | 54.7% |
+| Manual-G33 | 453 | 547 | 0 | 45.3% |
+
+First-player / second-player breakdown for GA-G33:
+
+| Role | Wins | Losses | Draws |
+|---|---:|---:|---:|
+| First player | 101 | 399 | 0 |
+| Second player | 446 | 54 | 0 |
+
+This result shows that the GA-tuned weights outperform the hand-tuned V3 weights in a 1000-game direct comparison. The role breakdown also suggests a defensive or second-player bias, which is consistent with the earlier G33 vs G22-V1 evaluation.
+
+Raw log:
+
+```text
+results/manual_g33_vs_ga_g33_1000.txt
+
+## 5. GA Tuning Log
 
 The GA tuner runs offline evolution over evaluation-weight arrays.
 
@@ -73,7 +96,7 @@ Detailed raw log:
 results/ga_tuning_log.txt
 ```
 
-## 5. Interpretation
+## 6. Interpretation
 
 The two experiments answer different questions.
 
@@ -98,9 +121,9 @@ The two reported win rates should not be mixed:
 - 80.0% win rate comes from the 100-game V3 vs V2 report.
 - 69.4% win rate comes from the 1000-game GA-G33 vs G22-V1 evaluation.
 
-## 6. Limitations
+## 7. Limitations
 
-The current evaluation is based on internal baselines rather than professional Connect6 engines.
+The current evaluation is based on internal baselines rather than professional Connect6 engines. The GA-tuned weights show a clear second-player bias, so future tuning should balance first-player and second-player objectives.
 
 Future evaluation can include:
 
