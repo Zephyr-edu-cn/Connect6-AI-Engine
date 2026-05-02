@@ -1,0 +1,29 @@
+C:\Users\DELL\.jdks\corretto-19.0.2\bin\java.exe "-javaagent:D:\IntelliJ IDEA 2024.1.4\lib\idea_rt.jar=53279:D:\IntelliJ IDEA 2024.1.4\bin" -Dfile.encoding=GBK -Dsun.stdout.encoding=GBK -Dsun.stderr.encoding=GBK -classpath C:\Users\DELL\Desktop\finl\connect6-ai-engine\out\production\connect6-ai-engine;C:\Users\DELL\Desktop\finl\connect6-ai-engine\lib\jagoclient.jar stud.ManualVsGATester
+=========================================================================
+	Game Statistics (GA-G33 vs Manual-G33):  1094
+		先手：	win:   101, lose:   399, draw:     0, 得分:   202
+		后手：	win:   446, lose:    54, draw:     0, 得分:   892
+		合计：	win:   547, lose:   453, draw:     0, 得分:  1094
+----------------------------------------------------------------------
+	 GA-G33总计：	win:   547, lose:   453, draw:     0, 得分:  1094
+
+=========================================================================
+	Game Statistics (Manual-G33 vs GA-G33):   906
+		先手：	win:    54, lose:   446, draw:     0, 得分:   108
+		后手：	win:   399, lose:   101, draw:     0, 得分:   798
+		合计：	win:   453, lose:   547, draw:     0, 得分:   906
+----------------------------------------------------------------------
+	 Manual-G33总计：	win:   453, lose:   547, draw:     0, 得分:   906
+
+================================棋手总战绩================================
+	 GA-G33总计：	win:   547, lose:   453, draw:     0, 得分:  1094
+	 Manual-G33总计：	win:   453, lose:   547, draw:     0, 得分:   906
+
+===========棋手得分明细 (WSUM: 先手得分，BSUM：后手得分，TSUM：棋手的总得分)===========
+         GA-G33, Manual-G33, |WSUM
+	--------------------------
+	GA-G33|     ,   202, |  202
+	Manual-G33|  108,      , |  108
+	BSUM|  892,   798, |   -
+	TSUM| 1094,   906, |   -
+37176.4375
