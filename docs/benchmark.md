@@ -29,6 +29,8 @@ This experiment validates the effect of threat-space search.
 
 ## 2. GA-Tuned G33 vs G22-V1
 
+Note: `G33-AlphaBot` refers to the GA-tuned G33 engine, which is also denoted as `GA-G33` in the benchmark tables.
+
 The GA-tuned G33 engine was evaluated against the G22-V1 baseline over 1000 games.
 
 | Player | Wins | Losses | Draws | Win Rate |
