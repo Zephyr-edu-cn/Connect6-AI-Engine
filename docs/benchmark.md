@@ -49,7 +49,7 @@ The 1000-game match log also records first-player and second-player results.
 For G33-AlphaBot:
 
 | Role | Wins | Losses | Draws | Notes |
-|---|---:|---:|---|
+|---|---:|---:|---:|---|
 | First player | 194 | 306 | 0 | weaker opening-side result |
 | Second player | 500 | 0 | 0 | stable defensive performance |
 
