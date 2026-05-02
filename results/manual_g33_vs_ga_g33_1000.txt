@@ -1,4 +1,3 @@
-C:\Users\DELL\.jdks\corretto-19.0.2\bin\java.exe "-javaagent:D:\IntelliJ IDEA 2024.1.4\lib\idea_rt.jar=53279:D:\IntelliJ IDEA 2024.1.4\bin" -Dfile.encoding=GBK -Dsun.stdout.encoding=GBK -Dsun.stderr.encoding=GBK -classpath C:\Users\DELL\Desktop\finl\connect6-ai-engine\out\production\connect6-ai-engine;C:\Users\DELL\Desktop\finl\connect6-ai-engine\lib\jagoclient.jar stud.ManualVsGATester
 =========================================================================
 	Game Statistics (GA-G33 vs Manual-G33):  1094
 		先手：	win:   101, lose:   399, draw:     0, 得分:   202
