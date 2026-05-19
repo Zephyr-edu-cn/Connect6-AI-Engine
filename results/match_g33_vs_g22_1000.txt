@@ -1,4 +1,4 @@
-C:\Users\DELL\.jdks\corretto-19.0.2\bin\java.exe -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 "-javaagent:D:\IntelliJ IDEA 2024.1.4\lib\idea_rt.jar=63180:D:\IntelliJ IDEA 2024.1.4\bin" -classpath C:\Users\DELL\Desktop\finl\connect6-ai-engine\out\production\connect6-ai-engine;C:\Users\DELL\Desktop\finl\connect6-ai-engine\lib\jagoclient.jar stud.AITester
+Run entry: stud.AITester
 =========================================================================
 	Game Statistics (G33-AlphaBot vs G22-V1):  1388
 		先手：	win:   194, lose:   306, draw:     0, 得分:   388

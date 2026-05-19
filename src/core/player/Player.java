@@ -110,7 +110,6 @@ public abstract class Player implements Comparable<Player>, Cloneable, Runnable 
 	private GameTimer timer;	//棋手的计时器
 	@Override
 	public int compareTo(Player arg0) {
-		// TODO Auto-generated method stub
 		return arg0.scores() - this.scores();
 	}
 	

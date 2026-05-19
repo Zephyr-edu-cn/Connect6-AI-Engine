@@ -54,11 +54,11 @@ This design avoids complex pattern matching such as live-three, dead-four, or op
 
 Instead, the engine uses road statistics as a compact approximation of tactical potential.
 
-## 4. Threat-Space Candidate Generation
+## 4. TBS-Inspired Candidate Generation
 
 Connect6 moves consist of two positions, so enumerating all empty pairs is expensive.
 
-The V3 engine generates candidates from:
+The V3 engine uses threat-space ideas to generate candidates from:
 
 - roads with potential threats;
 - empty cells on those roads;
@@ -75,7 +75,7 @@ The main search flow is:
 
 ```text
 emergency attack/defense check
-    -> threat-space candidate generation
+    -> TBS-inspired candidate generation
     -> heuristic candidate ordering
     -> Alpha-Beta search
     -> fallback move if no candidate is available
@@ -112,7 +112,7 @@ A representative evolved chromosome is:
 The project combines three levels of optimization:
 
 1. board representation: road-based incremental evaluation;
-2. search pruning: threat-space candidate generation and Alpha-Beta pruning;
+2. search pruning: TBS-inspired candidate generation and Alpha-Beta pruning;
 3. parameter tuning: offline GA-based evaluation-weight search.
 
 The key idea is to convert a large two-stone branching problem into a structured search over threat-related candidate positions.

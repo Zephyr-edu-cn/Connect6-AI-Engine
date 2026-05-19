@@ -9,12 +9,10 @@ import java.util.Random;
 public abstract class AI extends Player {
 	
 	public AI() {
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public final boolean isManual() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 

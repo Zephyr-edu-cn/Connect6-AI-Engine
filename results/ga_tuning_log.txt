@@ -1,4 +1,4 @@
-C:\Users\DELL\.jdks\corretto-19.0.2\bin\java.exe "-javaagent:D:\IntelliJ IDEA 2024.1.4\lib\idea_rt.jar=51693:D:\IntelliJ IDEA 2024.1.4\bin" -Dfile.encoding=GBK -Dsun.stdout.encoding=GBK -Dsun.stderr.encoding=GBK -classpath C:\Users\DELL\Desktop\finl\connect6-ai-engine\out\production\connect6-ai-engine;C:\Users\DELL\Desktop\finl\connect6-ai-engine\lib\jagoclient.jar stud.g33.GATuner
+Run entry: stud.g33.GATuner
 >>> 遗传算法离线进化开始...
 
 --- 第 1 代进化中 ---

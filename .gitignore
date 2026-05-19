@@ -1,15 +1,15 @@
-# IntelliJ IDEA 配置文件
+# IDE configuration files
 .idea/
 *.iml
 
-# 编译输出目录
+# Build output directories
 out/
 target/
 *.class
 
-# 日志文件
+# Log files
 *.log
 
-# 其它
+# Other generated files
 project_summary.txt
 *.py

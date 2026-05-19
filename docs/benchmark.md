@@ -2,7 +2,7 @@
 
 ## 1. V3 vs V2 Evaluation
 
-The original project report compares V3 with V2 under a 100-game setting.
+This section compares V3 with V2 under a 100-game setting.
 
 The goal of this experiment is to evaluate whether TBS-inspired candidate generation improves search focus and playing strength.
 
@@ -156,6 +156,6 @@ Future evaluation can include:
 The project demonstrates a staged improvement path:
 
 1. V2 introduces road-based evaluation and Alpha-Beta search.
-2. V3 adds threat-space candidate generation and reaches 80.0% win rate over V2 in 100 games.
+2. V3 adds TBS-inspired candidate generation and reaches 80.0% win rate over V2 in 100 games.
 3. GA-tuned G33 introduces offline weight tuning and obtains 694 wins / 306 losses against G22-V1 in 1000 games.
 4. GA-G33 further achieves 547 wins / 453 losses against the hand-tuned Manual-G33 in a 1000-game direct comparison.
