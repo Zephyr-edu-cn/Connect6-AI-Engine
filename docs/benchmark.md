@@ -4,12 +4,14 @@
 
 The original project report compares V3 with V2 under a 100-game setting.
 
-The goal of this experiment is to evaluate whether threat-space search improves search depth and playing strength.
+The goal of this experiment is to evaluate whether TBS-inspired candidate generation improves search focus and playing strength.
+
+Terminology note: this implementation uses threat-space ideas to generate and order candidates inside Alpha-Beta. It is TBS-inspired candidate generation, not a complete proof-tree threat-space algorithm.
 
 | Configuration | Search Depth | Search Width | Candidate Generation |
 |---|---:|---:|---|
 | V2 | 2 | 12 | Local neighborhood |
-| V3 | 4 | 14 | Threat-space search |
+| V3 | 4 | 14 | TBS-inspired candidate generation |
 
 Reported performance changes:
 
@@ -25,7 +27,9 @@ Match result:
 |---|---:|---:|---:|---:|---:|
 | V3 vs V2 | 100 | 80 | 20 | 0 | 80.0% |
 
-This experiment validates the effect of threat-space search.
+This experiment validates the effect of TBS-inspired candidate generation.
+
+These results evaluate relative improvements over internal baselines and should not be interpreted as absolute playing strength against professional Connect6 engines.
 
 ## 2. GA-Tuned G33 vs G22-V1
 
@@ -103,11 +107,11 @@ results/ga_tuning_log.txt
 
 The experiments answer different questions.
 
-The V3 vs V2 experiment shows the benefit of threat-space search:
+The V3 vs V2 experiment shows the benefit of TBS-inspired candidate generation:
 
 ```text
 local-neighborhood Alpha-Beta
-    -> threat-space Alpha-Beta
+    -> TBS-inspired candidate generation
     -> deeper search and higher win rate
 ```
 
