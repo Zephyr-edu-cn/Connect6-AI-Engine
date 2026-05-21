@@ -4,7 +4,7 @@ import core.game.timer.GameTimer;
 import core.game.ui.GameUI;
 
 import java.util.Observable;
-//六子棋的另一个不太美观的GUI
+//鍏瓙妫嬬殑鍙︿竴涓笉澶編瑙傜殑GUI
 public class UglyGUI implements GameUI {
     @Override
     public void setTimer(GameTimer bTimer, GameTimer wTimer) {

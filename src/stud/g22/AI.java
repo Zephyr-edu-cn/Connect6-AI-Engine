@@ -20,21 +20,18 @@ public class AI extends core.player.AI {
 
     @Override
     public String name() {
-        return "G22-V2-RoadPaper";
+        return "G22-V1";
     }
 
     @Override
     public void playGame(Game game) {
-        System.out.println("[DEBUG] AI " + name() + " playGame called, color: " + this.getColor());
-
         // 先调用父类方法
         super.playGame(game);
 
         // 初始化父类的board
         if (this.board == null) {
-            this.board = new core.board.Board("G22-V2-RoadPaper");
+            this.board = new core.board.Board("G22-V1");
             this.board.clear(); // 这会设置中心黑子
-            System.out.println("[DEBUG] Created and initialized parent board");
         }
 
         // 初始化自己的RoadBoard
@@ -49,25 +46,15 @@ public class AI extends core.player.AI {
 
         // 注意：如果自己是白方，这个黑子是对手的
         // 如果自己是黑方，这个黑子是自己（初始）的
-
-        System.out.println("[DEBUG] Added center black stone at index " + centerIndex + " to RoadBoard");
-        System.out.println("[DEBUG] playGame completed");
-        System.out.println("[DEBUG] Parent board is null? " + (this.board == null));
-        System.out.println("[DEBUG] RoadBoard is null? " + (roadBoard == null));
     }
 
     @Override
     public Move findNextMove(Move opponentMove) {
-        System.out.println("[G11 AI] ========== findNextMove called ==========");
-        System.out.println("[G11 AI] moveCount: " + moveCount);
-        System.out.println("[G11 AI] opponentMove: " + opponentMove);
-
         // 1. 先同步状态（确保RoadBoard与实际棋盘一致）
         syncBoardToRoadBoard();
 
         // 2. 判断是否是白方第一手
         if (moveCount == 0 && opponentMove == null) {
-            System.out.println("[G11 AI] White first move case");
             Move opening = super.firstMove();
             updateMyMove(opening);
             return opening;
@@ -76,22 +63,18 @@ public class AI extends core.player.AI {
         // 3. 紧急威胁检查
         Move emergencyMove = checkEmergency();
         if (emergencyMove != null) {
-            System.out.println("[G11 AI] Emergency move found: " + emergencyMove);
             updateMyMove(emergencyMove);
             return emergencyMove;
         }
 
         // 4. Alpha-Beta搜索
-        System.out.println("[G11 AI] Starting alphaBetaSearch...");
         Move bestMove = alphaBetaSearch();
 
         // 5. 兜底逻辑
         if (bestMove == null) {
-            System.out.println("[G11 AI] No move from alphaBetaSearch, using fallback");
             bestMove = generateFallbackMove();
         }
 
-        System.out.println("[G11 AI] Selected move: " + bestMove);
         updateMyMove(bestMove);
         return bestMove;
     }
@@ -113,7 +96,6 @@ public class AI extends core.player.AI {
             trueEmpties.sort((a, b) ->
                     roadBoard.evaluatePointSimple(b, myColorInt) -
                             roadBoard.evaluatePointSimple(a, myColorInt));
-            System.out.println("[G11 AI] Fallback move from top positions: " + trueEmpties.get(0) + ", " + trueEmpties.get(1));
             return new Move(trueEmpties.get(0), trueEmpties.get(1));
         } else {
             // 极端情况
@@ -122,17 +104,13 @@ public class AI extends core.player.AI {
                 if (roadBoard.isEmpty(i)) allEmpties.add(i);
             }
             if (allEmpties.size() >= 2) {
-                System.out.println("[G11 AI] Fallback move from all empties: " + allEmpties.get(0) + ", " + allEmpties.get(1));
                 return new Move(allEmpties.get(0), allEmpties.get(1));
             }
-            System.out.println("[G11 AI] Emergency fallback move: 0, 1");
             return new Move(0, 1);
         }
     }
 
     private void updateMyMove(Move move) {
-        System.out.println("[G11 AI] updateMyMove: " + move);
-
         // 更新RoadBoard
         roadBoard.addStone(move.index1(), myColorInt);
         if (move.index1() != move.index2()) {
@@ -145,7 +123,6 @@ public class AI extends core.player.AI {
         }
 
         moveCount++;
-        System.out.println("[G11 AI] moveCount after update: " + moveCount);
     }
 
     // --- V1 逻辑: 必杀与必防 ---
@@ -207,11 +184,8 @@ public class AI extends core.player.AI {
     // --- V2 逻辑: Alpha-Beta 搜索 ---
 
     private Move alphaBetaSearch() {
-        System.out.println("[G11 AI] alphaBetaSearch called, moveCount=" + moveCount);
-
         List<Integer> rawCandidates = roadBoard.getEmptyNeighbors(2);
         if (rawCandidates.isEmpty()) {
-            System.out.println("[G11 AI] No candidates found, returning null");
             return null;
         }
 
@@ -219,7 +193,6 @@ public class AI extends core.player.AI {
         rawCandidates.sort((a, b) -> roadBoard.evaluatePointSimple(b, myColorInt) - roadBoard.evaluatePointSimple(a, myColorInt));
 
         int limit = Math.min(rawCandidates.size(), SEARCH_WIDTH);
-        System.out.println("[G11 AI] Number of candidates: " + rawCandidates.size() + ", limit to: " + limit);
 
         Move bestMove = null;
         int alpha = Integer.MIN_VALUE;
@@ -248,14 +221,12 @@ public class AI extends core.player.AI {
                 if (val > alpha) {
                     alpha = val;
                     bestMove = new Move(p1, p2);
-                    System.out.println("[G11 AI] New best move: " + bestMove + " with score " + val);
                 }
             }
         }
 
         if (bestMove == null && limit >= 2) {
             // 如果没有找到有效走步，使用前两个候选点
-            System.out.println("[G11 AI] No valid move found in search, using first two candidates");
             int p1 = rawCandidates.get(0);
             int p2 = rawCandidates.get(1);
             if (roadBoard.isEmpty(p1) && roadBoard.isEmpty(p2)) {
@@ -348,8 +319,6 @@ public class AI extends core.player.AI {
     }
 
     private void syncBoardToRoadBoard() {
-        System.out.println("[G11 AI] Syncing parent board state to RoadBoard");
-
         // 清空并重建RoadBoard
         roadBoard = new RoadBoard();
 
@@ -374,7 +343,5 @@ public class AI extends core.player.AI {
             // 白方：初始没有白子
             moveCount = myStones / 2;
         }
-
-        System.out.println("[G11 AI] Sync completed, moveCount=" + moveCount);
     }
 }

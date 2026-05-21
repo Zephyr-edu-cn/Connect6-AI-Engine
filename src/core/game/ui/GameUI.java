@@ -5,6 +5,6 @@ import java.util.Observer;
 import core.game.timer.GameTimer;
 
 public interface GameUI extends Observer{
-	//ÔÚUIÉÏ·ÅÖÃ¿ÉÊÓ»¯µÄ¼ÆÊ±Æ÷£¬µ±Ç°¿ò¼ÜÃ»ÓĞÓÃµ½¡£
+	//åœ¨UIä¸Šæ”¾ç½®å¯è§†åŒ–çš„è®¡æ—¶å™¨ï¼Œå½“å‰æ¡†æ¶æ²¡æœ‰ç”¨åˆ°ã€‚
 	public void setTimer(GameTimer bTimer, GameTimer wTimer);
 }

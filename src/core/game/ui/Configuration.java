@@ -13,19 +13,19 @@ public class Configuration {
     public static final String PLAYER_IDs;
     public static final int HOST_ID;
     public static final String GUI_TYPE;
-    public static int STEP_INTER;   //Ã¿Ò»²½Í£ÁôµÄÊ±¼ä
+    public static int STEP_INTER;   //æ¯ä¸€æ­¥åœç•™çš„æ—¶é—´
 
     public Configuration() {
     }
 
     static {
         Properties pps = new Properties();
-        // Ê¹ÓÃ InputStreamReader Ö¸¶¨±àÂë£¬Ö÷¶¯·ÀÓùÂÒÂëÎÊÌâ
+        // ä½¿ç”¨ InputStreamReader æŒ‡å®šç¼–ç ï¼Œä¸»åŠ¨é˜²å¾¡ä¹±ç é—®é¢˜
         try (InputStreamReader isr = new InputStreamReader(new FileInputStream("file.properties"), "UTF-8")) {
             pps.load(isr);
         } catch (IOException var2) {
             var2.printStackTrace();
-            System.exit(1); // ÕÒ²»µ½ÅäÖÃÖ±½ÓÍË³ö£¬±ÜÃâºóĞøÅ×³ö¿ÕÖ¸Õë
+            System.exit(1); // æ‰¾ä¸åˆ°é…ç½®ç›´æ¥é€€å‡ºï¼Œé¿å…åç»­æŠ›å‡ºç©ºæŒ‡é’ˆ
         }
 
         TIME_LIMIT = Integer.parseInt(pps.getProperty("TimeLimit"));

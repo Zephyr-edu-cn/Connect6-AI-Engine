@@ -6,7 +6,7 @@ import java.util.Observable;
 import core.game.timer.GameTimer;
 import core.game.ui.GameUI;
 import jagoclient.board.GoFrame;
-//六子棋的一种GUI
+//鍏瓙妫嬬殑涓�绉岹UI
 public class BeautyGUI implements GameUI {
 	
 	GoFrame frame = null;
@@ -35,7 +35,7 @@ public class BeautyGUI implements GameUI {
 
 	@Override
 	public void setTimer(GameTimer bTimer, GameTimer wTimer) {
-		//在GoFrame上设置具有GUI的timer.
+		//鍦℅oFrame涓婅缃叿鏈塆UI鐨則imer.
 		// To do
 	}
 }
